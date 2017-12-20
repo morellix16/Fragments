@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,14 +58,6 @@ public class FragUno extends Fragment {
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -72,42 +65,25 @@ public class FragUno extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_frag_uno, container, false);
 
+
+        return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         ArrayList<Producto> listItems = new ArrayList<>();
         listItems.add(new Producto(R.drawable.imagea,"Persona","10"));
         listItems.add(new Producto(R.drawable.leonidas,"Leonidas","15"));
         listItems.add(new Producto(R.drawable.stark,"Ned Stark","20"));
         // Inflate the layout for this fragment
 
-        ListView listview = view.findViewById(R.id.listView);
+        ListView listview = getActivity().findViewById(R.id.listView);
 
         adaptador = new Adaptador(getActivity(), listItems);
         listview.setAdapter((ListAdapter) adaptador);
-        return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
 
     /**
      * This interface must be implemented by activities that contain this
