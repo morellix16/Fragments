@@ -31,15 +31,5 @@
             android:layout_below="@+id/titulo"
             android:textSize="16dp"
             />
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinner"
-            android:layout_alignParentEnd="true"
-            >
-
-        </Spinner>
-
-
 
 </RelativeLayout>

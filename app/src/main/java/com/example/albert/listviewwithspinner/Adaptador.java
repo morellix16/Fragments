@@ -50,10 +50,9 @@ public class Adaptador extends BaseAdapter {
         Producto p = (Producto) getItem(i);
         view = LayoutInflater.from(context).inflate(R.layout.itemlistview,null);
 
-        String [] values = context.getResources().getStringArray(R.array.spinner_array);
-        Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
-        ArrayAdapter adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, values);
-        spinner.setAdapter(adapter);
+
+        ArrayAdapter adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1);
+
 
         ImageView imgFoto = (ImageView) view.findViewById(R.id.imgfoto);
         TextView titulo = (TextView) view.findViewById(R.id.titulo);

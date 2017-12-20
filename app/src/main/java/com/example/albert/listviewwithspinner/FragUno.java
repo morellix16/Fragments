@@ -9,8 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -82,7 +84,18 @@ public class FragUno extends Fragment {
 
         adaptador = new Adaptador(getActivity(), listItems);
         listview.setAdapter((ListAdapter) adaptador);
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getActivity(), "This is my Toast message!",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
     }
+
+
 
 
     /**
@@ -99,4 +112,5 @@ public class FragUno extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
 }
