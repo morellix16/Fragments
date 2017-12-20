@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.albert.listviewwithspinner.Main2Activity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:id="@+id/compra"
+        android:text="@string/compra"
+        android:textAlignment="center"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/titulo2"
+        android:layout_below="@+id/foto"
+        android:layout_centerInParent="true"
+        android:textSize="18dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/productocomprado"
+        android:layout_below="@+id/foto"
+        android:layout_toStartOf="@+id/titulo2"
+        android:textSize="18dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/produc"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cantidadCompra"
+        android:layout_below="@+id/productocomprado"
+        android:layout_toLeftOf="@id/cantidad"
+        android:textSize="18dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/cant"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cantidad"
+        android:layout_below="@+id/titulo2"
+        android:layout_centerInParent="true"
+        android:textSize="18dp"
+        />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/compra"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/foto"
+        />
+
+</RelativeLayout>
